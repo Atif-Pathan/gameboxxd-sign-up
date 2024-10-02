@@ -124,7 +124,7 @@ ol[role="list"], ul[role="list"] {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: row wrap;
     flex: 1;
     position: relative;
 }
@@ -156,29 +156,66 @@ ol[role="list"], ul[role="list"] {
     width: 1.7rem;
 }
 
+form > p {
+    display: block;
+    width: 100%;
+    clear: both;
+    color: red;
+    margin-bottom: -0.5rem;
+}
 
 /* Input fields base styles */
 input {
     padding: 0.3rem 0.7rem;
     border: 2px solid grey;  /* Base border */
     border-radius: 12px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.5s ease, box-shadow 0.3s ease;
+}
+
+input:required {
+    border: 2px solid rgb(77, 77, 77);
+}
+
+input:required + span::after {
+    font-size: 0.7rem;
+    position: absolute;
+    content: "*required";
+    color: red;
+    top: 0.3rem;
+    right: 0.3rem;
 }
 
 /* Focused input - blue border */
 input:focus {
     border-color: blue;
     outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
 }
 
 /* Green for valid input */
 input:not(:placeholder-shown):valid {
     border-color: green;
+    box-shadow: 0 0 10px rgba(13, 144, 3, 0.5);
+}
+
+input:not(:placeholder-shown):valid + span::after{
+    content: "";
+    display: none;
 }
 
 /* Red for invalid input */
 input:not(:placeholder-shown):invalid {
     border-color: red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+input:not(:placeholder-shown):invalid + span::after {
+    font-size: 0.7rem;
+    position: absolute;
+    content: "invalid";
+    color: red;
+    top: 0.3rem;
+    right: 0.3rem;
 }
 
 /* remove the image entirely if the screen is too narrow */

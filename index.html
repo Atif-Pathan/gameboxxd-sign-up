@@ -22,17 +22,21 @@
                 <h3>Lets do it!</h3>
             </div>
             <form action="" method='get' class='signup-form'>
+                <!-- <p>Required fields are labeled with *</p> -->
                 <div class="form-row">
                     <label for="first-name">FIRST NAME</label>
                     <input type="text" id="first-name" placeholder="" required>
+                    <span></span>
                 </div>
                 <div class="form-row">
                     <label for="last-name">LAST NAME</label>
                     <input type="text" id="last-name" placeholder="" required>
+                    <span></span>
                 </div>
                 <div class="form-row">
                     <label for="email">EMAIL ADDRESS</label>
-                    <input type="email" id="email" placeholder="">
+                    <input type="email" id="email" placeholder="" required>
+                    <span></span>
                 </div>
                 <div class="form-row">
                     <label for="phone-number">PHONE NUMBER</label>
@@ -41,10 +45,12 @@
                 <div class="form-row">
                     <label for="password">PASSWORD</label>
                     <input type="password" id="password" minlength="7" placeholder="" required>
+                    <span></span>
                 </div>
                 <div class="form-row">
                     <label for="password-re-enter">CONFIRM PASSWORD</label>
                     <input type="password" id="password-re-enter" minlength="7" placeholder="" required>
+                    <span></span>
                 </div>
                 <div class="form-submit">
                     <button type="submit" class="submit-btn">Create Account</button>
