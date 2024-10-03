@@ -167,7 +167,7 @@ form > p {
 /* Input fields base styles */
 input {
     padding: 0.3rem 0.7rem;
-    border: 2px solid grey;  /* Base border */
+    border: 2px solid rgb(159, 159, 159);  /* Base border */
     border-radius: 12px;
     transition: border-color 0.5s ease, box-shadow 0.3s ease;
 }
@@ -176,29 +176,28 @@ input:required {
     border: 2px solid rgb(77, 77, 77);
 }
 
-input:required + span::after {
-    font-size: 0.7rem;
-    position: absolute;
-    content: "*required";
+.label-req:has(+ input) > span::before{
+    content: "*";
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 0.3rem;
     color: red;
-    top: 0.3rem;
-    right: 0.3rem;
 }
 
 /* Focused input - blue border */
 input:focus {
     border-color: blue;
     outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
 
 /* Green for valid input */
 input:not(:placeholder-shown):valid {
     border-color: green;
-    box-shadow: 0 0 10px rgba(13, 144, 3, 0.5);
+    box-shadow: 0 0 5px rgba(13, 144, 3, 0.5);
 }
 
-input:not(:placeholder-shown):valid + span::after{
+.label-req:has(+ input:not(:placeholder-shown):valid) > span::after{
     content: "";
     display: none;
 }
@@ -206,16 +205,20 @@ input:not(:placeholder-shown):valid + span::after{
 /* Red for invalid input */
 input:not(:placeholder-shown):invalid {
     border-color: red;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
-input:not(:placeholder-shown):invalid + span::after {
-    font-size: 0.7rem;
+/* Invalid state: show the feedback message for both password and confirm password */
+input:not(:placeholder-shown):invalid + .password-message::before {
+    content: "Missing a number, uppercase or special character!";
+}
+
+.password-confirm-message, .password-message, .tel-message {
     position: absolute;
-    content: "invalid";
+    top: 100%;  /* This positions the message directly below the input field */
+    left: 0;
     color: red;
-    top: 0.3rem;
-    right: 0.3rem;
+    font-size: 0.8rem;
 }
 
 /* remove the image entirely if the screen is too narrow */
