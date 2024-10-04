@@ -170,10 +170,18 @@ input {
     border: 2px solid rgb(159, 159, 159);  /* Base border */
     border-radius: 12px;
     transition: border-color 0.5s ease, box-shadow 0.3s ease;
+    background-color: rgb(255, 255, 255) !important;
 }
 
 input:required {
     border: 2px solid rgb(77, 77, 77);
+}
+
+/* Focused input - blue border */
+input:focus {
+    border-color: blue;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
 
 .label-req:has(+ input) > span::before{
@@ -182,13 +190,6 @@ input:required {
     font-style: italic;
     margin-left: 0.3rem;
     color: red;
-}
-
-/* Focused input - blue border */
-input:focus {
-    border-color: blue;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
 
 /* Green for valid input */
@@ -208,17 +209,24 @@ input:not(:placeholder-shown):invalid {
     box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
-/* Invalid state: show the feedback message for both password and confirm password */
-input:not(:placeholder-shown):invalid + .password-message::before {
-    content: "Missing a number, uppercase or special character!";
+input:not(:placeholder-shown):invalid + .name-message::before {
+    content: "Name can only contain letters";
 }
 
-.password-confirm-message, .password-message, .tel-message {
+input:not(:placeholder-shown):invalid + .tel-message::before {
+    content: "Must be between 10-15 digits";
+}
+
+input:not(:placeholder-shown):invalid + .email-message::before {
+    content: "Invalid email format";
+}
+
+.password-confirm-message, .password-message, .tel-message, .name-message, .email-message {
     position: absolute;
     top: 100%;  /* This positions the message directly below the input field */
     left: 0;
     color: red;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 /* remove the image entirely if the screen is too narrow */

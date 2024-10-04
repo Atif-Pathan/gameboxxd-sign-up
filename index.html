@@ -24,16 +24,18 @@
             <form action="" method='get' class='signup-form'>
                 <!-- <p>Required fields are labeled with *</p> -->
                 <div class="form-row">
-                    <label class="label-req" for="first-name">FIRST NAME<span></span></label>
-                    <input type="text" id="first-name" placeholder="" required>
+                    <label class="label-req" for="name">NAME<span></span></label>
+                    <input type="text" id="name" placeholder="Odin Turtle" required pattern="[A-Za-z\s]+">
+                    <span class="name-message"></span>
                 </div>
                 <div class="form-row">
-                    <label class="label-req" for="last-name">LAST NAME<span></span></label>
-                    <input type="text" id="last-name" placeholder="" required>
+                    <label class="label-req" for="user-name">USERNAME<span></span></label>
+                    <input type="text" id="user-name" placeholder="the0din7urtle" required>
                 </div>
                 <div class="form-row">
                     <label class="label-req" for="email">EMAIL ADDRESS<span></span></label>
-                    <input type="email" id="email" placeholder="" required>
+                    <input type="email" id="email" placeholder="example@email.com" required>
+                    <span class="email-message"></span>
                 </div>
                 <div class="form-row">
                     <label for="phone-number">PHONE NUMBER (Optional)</label>
@@ -42,12 +44,12 @@
                 </div>
                 <div class="form-row">
                     <label class="label-req" for="password">PASSWORD<span></span></label>
-                    <input type="password" id="password" placeholder="" required pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).*$">
+                    <input type="password" id="password" placeholder="*******" required pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).*$" minlength="7">
                     <span class="password-message"></span>
                 </div>
                 <div class="form-row">
                     <label class="label-req" for="password-re-enter">CONFIRM PASSWORD<span></span></label>
-                    <input type="password" id="password-re-enter" placeholder="" required pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).*$">
+                    <input type="password" id="password-re-enter" placeholder="*******" required pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).*$" minlength="7">
                     <span class="password-confirm-message"></span>
                 </div>
                 <div class="form-submit">
