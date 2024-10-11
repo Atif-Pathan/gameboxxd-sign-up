@@ -29,8 +29,12 @@ body {
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
-    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    /* background: url(art/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg) no-repeat; */
+    /* background-size: cover; */
     position: relative;
+    /* background-attachment: fixed; */
 }
   
 /*
@@ -73,33 +77,57 @@ ol[role="list"], ul[role="list"] {
 
 /* ========================================= My Styles ========================================= */
 
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 .hero {
-    background-image: url('art/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg');
+    background-image: url(art/pawel-czerwinski-ruJm3dBXCqw-unsplash.jpg);
     background-size: cover; /* Ensures the image covers the full container */
     background-position: center;
     min-height: 100vh;
     flex: 2;
 }
 
-.main {
-    width: clamp(300px, 40%, 600px); /* Dynamically adjusts width between 300px and 600px */
-    min-height: 100vh;
-    background-color: rgb(255, 255, 255);
-    position: relative;
-}
 
 .main-content {
+    /* max-width:40vw; */
+    width: clamp(300px, 40vw, 600px); 
+    /* height: clamp(90vh, calc(100vh + 10vh), 120vh); */
+    /* min-width: 35vw; */
+    height: 90vh;
+    position: absolute;
+    right: 2vw;
+    z-index: 1;
+    /* box-shadow: 0 0 1rem 0 rgba(0,0,0,1); */
+    /* background: inherit; */
     display: flex;
-    width: 100%;
-    min-height: 95vh;
+    /* width: 100%; */
+    /* min-height: 95vh; */
     flex-direction: column;
+    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     align-items: center;
     gap: 1rem;
     padding: 2rem;
     padding-bottom: 4rem;
     flex: 1;
+    border-radius: 1.5rem;
+    /* background: rgba(227, 116, 255, 0.356); */
+    background: rgba(216, 191, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.815);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
+
 
 .main-heading {
     display: flex;
@@ -127,7 +155,7 @@ ol[role="list"], ul[role="list"] {
     flex-wrap: row wrap;
     flex: 1;
     position: relative;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 .form-submit {
@@ -144,17 +172,27 @@ ol[role="list"], ul[role="list"] {
 
 .footer-links {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    /* align-items: flex-start; */
     position: absolute;
-    bottom: 0;
+    top: 1rem;
+    left: 1rem;
     min-height: 6vh;
-    width: 100%;
+    /* width: 100%; */
     gap: 0.7rem;
 }
 
 .footer-icon {
-    width: 1.7rem;
+    width: 2rem;
+    /* opacity: 0.7; */
+    filter: invert(75%) sepia(90%) saturate(300%) hue-rotate(270deg) brightness(90%);
+}
+
+.footer-icon:hover {
+    transform: scale(1.1); /* Pop up slightly on hover */
+    filter: invert(100%) sepia(100%) saturate(500%) hue-rotate(270deg) brightness(95%); /* Slightly brighten on hover */
 }
 
 form > p {
@@ -172,7 +210,6 @@ input {
     border-radius: 12px;
     transition: border-color 0.5s ease, box-shadow 0.3s ease;
     background-color: rgb(255, 255, 255) !important;
-    box-shadow: rgba(240, 46, 72, 0.4) 0px 5px, rgba(240, 46, 95, 0.3) 0px 10px;
 }
 
 input:required {
