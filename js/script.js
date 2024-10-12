@@ -20,11 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (password.validity.patternMismatch) {
             password.setCustomValidity('Missing a number, uppercase letter, or special character.');
             passwordMessage.textContent = 'Missing a number, uppercase letter, or special character.';
-            passwordMessage.style.color = 'red';
         } else if (password.value.length > 0 && password.value.length < 7) {  // Length validation
             password.setCustomValidity('Password must be at least 7 characters long.');
             passwordMessage.textContent = 'Password must be at least 7 characters long.';
-            passwordMessage.style.color = 'red';
         } else {
             // Clear any custom messages
             password.setCustomValidity('');
@@ -37,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (password.value !== confirmPassword.value && confirmPassword.value.length > 0) {
             confirmPassword.setCustomValidity('Passwords do not match.');
             confirmPasswordMessage.textContent = 'Passwords do not match.';
-            confirmPasswordMessage.style.color = 'red';
         } else {
             confirmPassword.setCustomValidity('');
             confirmPasswordMessage.textContent = ''; // Clear the message when passwords match
