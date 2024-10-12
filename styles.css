@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 /* ============================================= CSS Reset ================================================== 
 
 Add come CSS normalize/reset mainly taken from Josh Comeau --> https://www.joshwcomeau.com/css/custom-css-reset
@@ -28,13 +29,10 @@ body {
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
     min-width: 100vw;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    /* background: url(art/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg) no-repeat; */
-    /* background-size: cover; */
+    align-items: center; */
     position: relative;
-    /* background-attachment: fixed; */
 }
   
 /*
@@ -96,15 +94,15 @@ canvas {
     flex: 2;
 }
 
-
 .main-content {
     /* max-width:40vw; */
-    width: clamp(300px, 40vw, 600px); 
+    width: clamp(500px, 45vw, 800px); 
     /* height: clamp(90vh, calc(100vh + 10vh), 120vh); */
     /* min-width: 35vw; */
     height: 90vh;
     position: absolute;
     right: 2vw;
+    top: 6vh;
     z-index: 1;
     /* box-shadow: 0 0 1rem 0 rgba(0,0,0,1); */
     /* background: inherit; */
@@ -116,34 +114,45 @@ canvas {
     justify-content: space-evenly;
     align-items: center;
     gap: 1rem;
-    padding: 2rem;
+    padding: 3rem;
     padding-bottom: 4rem;
     flex: 1;
     border-radius: 1.5rem;
     /* background: rgba(227, 116, 255, 0.356); */
-    background: rgba(216, 191, 255, 0.3);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.815);
+    /* background: rgb(87, 255, 21); */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    /* border: 1px solid #222; */
+    /* border-radius: 16px; */
+    image-rendering: pixelated; /* Ensure images and backgrounds stay pixelated */
+    image-rendering: crisp-edges;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.815);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); */
 }
-
 
 .main-heading {
     display: flex;
     flex-direction: column;
+    padding: 2rem;
+    padding-bottom: 0;
+    padding-top: 0;
+    justify-content: center;
     gap: 1rem;
     text-align: justify;
+    font-size: 0.9rem;
 }
 
 .sub-heading {
-    width: 100%;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
 }
 
 .signup-form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     /* flex-wrap: wrap; */
     gap: 1rem;
 }
@@ -152,8 +161,10 @@ canvas {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    flex-wrap: row wrap;
-    flex: 1;
+    flex-wrap: wrap;
+    /* width: 15vw; */
+    /* flex: 1; */
+    /* width: max-content; */
     position: relative;
     /* margin-bottom: 1rem; */
 }
@@ -195,6 +206,21 @@ canvas {
     filter: invert(100%) sepia(100%) saturate(500%) hue-rotate(270deg) brightness(95%); /* Slightly brighten on hover */
 }
 
+.form-background {
+    width: clamp(400px, 45vw, 700px);
+    /* min-width: 60vw; */
+    height: 90vh;
+    display: flex;
+    position: absolute;
+    top: 5vh;
+    right: 2vw;
+    /* scale: 0.5; */
+    /* background-image: url('art/border-neon-pink.png');
+    background-size: cover;
+    background-position: center; */
+    /* z-index: 1; */
+}
+
 form > p {
     display: block;
     width: 100%;
@@ -208,6 +234,7 @@ input {
     padding: 0.3rem 0.7rem;
     border: 2px solid rgb(159, 159, 159);  /* Base border */
     border-radius: 12px;
+    /* width: 20vw; */
     transition: border-color 0.5s ease, box-shadow 0.3s ease;
     background-color: rgb(255, 255, 255) !important;
 }
